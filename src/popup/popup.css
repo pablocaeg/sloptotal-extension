@@ -196,6 +196,12 @@ body {
   line-height: 1;
 }
 
+.results-confidence {
+  font-size: 10px;
+  color: #7a756b;
+  white-space: nowrap;
+}
+
 .results-bar {
   height: 6px;
   background: #e8e3d8;

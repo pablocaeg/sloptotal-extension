@@ -12,6 +12,7 @@ const scanStatus = document.getElementById("scan-status");
 const resultsEl = document.getElementById("results");
 const verdictEl = document.getElementById("verdict");
 const scoreDisplay = document.getElementById("score-display");
+const confidenceEl = document.getElementById("confidence");
 const resultsFill = document.getElementById("results-fill");
 const engineRows = document.getElementById("engine-rows");
 const tGoogle = document.getElementById("t-google");
@@ -174,6 +175,13 @@ function showResults(data) {
   verdictEl.style.color = color;
   scoreDisplay.textContent = `${Math.round(score)}%`;
   scoreDisplay.style.color = color;
+  if (data.confidence) {
+    confidenceEl.textContent = `Confidence: ${data.confidence}`;
+    confidenceEl.hidden = false;
+  } else {
+    confidenceEl.textContent = "";
+    confidenceEl.hidden = true;
+  }
   resultsFill.className = `results-fill ${fillClass}`;
   resultsFill.style.width = `${score}%`;
   let html = "";
